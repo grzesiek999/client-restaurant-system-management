@@ -1,10 +1,12 @@
 import React from 'react';
+import Routing from './router/Routing';
 
 
 const App = () => {
+
   return (
-    <div>Nasz projekt</div>
-  );
+    <Routing />
+  );  
 }
 
 export default App;

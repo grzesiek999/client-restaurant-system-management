@@ -1,12 +1,13 @@
 import { createContext, useState, useCallback, ReactNode, useEffect } from 'react';
+import { SESSION } from '../constant/UserSession';
 
 type User = {
-  id: number
-  email: string;
-  name: string;
-  surname: string;
-  role: string;
-};
+    userLoginDataId: string,
+    firstname: string,
+    lastname: string,
+    email: string,
+    role: string
+}
 
 export type UserContextType = {
   user: User | null;
@@ -38,7 +39,7 @@ interface UserDataContextProps {
     useEffect (
       ()=>{
         if(userData){
-          const timeout = setTimeout(logOut, 3600000);
+          const timeout = setTimeout(logOut, SESSION.EXPIRY);
           return () => clearTimeout(timeout);
         }
       }, [userData, logOut]);

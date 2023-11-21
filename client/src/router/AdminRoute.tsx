@@ -8,8 +8,8 @@ export default function AdminRoute () {
 
     const {user} = useContext(UserAuth);
 
-    if(user && user.role){
-        return <Navigate to={ROUTER_PATH.HOME} />
+    if(user && user.role!=='admin'){
+        return <Navigate to={ROUTER_PATH.USER} />
     }
     return <Outlet />;
 }

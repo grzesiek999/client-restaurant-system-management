@@ -3,7 +3,7 @@ import React from "react";
 
 const AddWorkerPage = () => {
     return (
-        <div></div>
+        <div>add worker</div>
     );
 }
 

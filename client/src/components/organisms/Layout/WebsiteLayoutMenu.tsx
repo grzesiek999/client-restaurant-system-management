@@ -1,17 +1,19 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { ROUTER_PATH } from '../../../router/RouterPath';
+import React, { useContext } from "react";
 import "../../../styles/index.scss";
+import LogoutButton from "../../atoms/buttons/LogoutButton";
+import { UserAuth } from "../../../context/UserDataContext";
+import LoginLink from "../../atoms/links/LoginLink";
 
 
 const WebsiteLayoutMenu = () => {
+
+    const {user} = useContext(UserAuth);
+
     return(
         <div className="website-layout-menu-div-wrapper">
             <div>nav</div>
             <div>logo</div>
-            <div>
-                <Link to={ROUTER_PATH.LOGIN}>Zaloguj</Link>
-            </div>
+            {user ? <LogoutButton/> : <LoginLink />}
         </div>
     );
 }

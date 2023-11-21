@@ -1,9 +1,10 @@
 import React from "react";
+import AddWorkerForm from "../components/organisms/AdminPanel/AddWorkerForm";
 
 
 const AddWorkerPage = () => {
     return (
-        <div>add worker</div>
+        <AddWorkerForm />
     );
 }
 
